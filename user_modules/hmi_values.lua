@@ -360,7 +360,9 @@ function module.getDefaultHMITable()
                 availableHDsAvailable = true,
                 stateAvailable = true,
                 signalStrengthAvailable = true,
-                signalChangeThresholdAvailable = true
+                signalChangeThresholdAvailable = true,
+                hdRadioEnableAvailable = true,
+                siriusxmRadioAvailable = true
               }
             },
             seatControlCapabilities = {
