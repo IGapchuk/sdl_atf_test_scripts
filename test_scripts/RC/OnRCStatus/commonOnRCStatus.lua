@@ -401,4 +401,29 @@ function m.registerNonRCApp(pAppId)
   :Times(0)
 end
 
+commonRC.actualInteriorDataStateOnHMI = {
+  CLIMATE = utils.cloneTable(commonRC.getModuleControlData("CLIMATE")),
+  RADIO = utils.cloneTable(commonRC.getModuleControlData("RADIO")),
+  SEAT = utils.cloneTable(commonRC.getModuleControlData("SEAT"))
+}
+
+local setActualInteriorVDorigin = commonRC.setActualInteriorVD
+function commonRC.setActualInteriorVD(pModuleType, pParams)
+  if pModuleType == "SEAT" then
+    for key, value in pairs(pParams["seatControlData"]) do
+      if type(value) ~= "table" then
+        if value ~= commonRC.actualInteriorDataStateOnHMI[pModuleType]["seatControlData"][key] then
+          commonRC.actualInteriorDataStateOnHMI[pModuleType]["seatControlData"][key] = value
+        end
+      else
+        if false == commonFunctions:is_table_equal(value, commonRC.actualInteriorDataStateOnHMI[pModuleType]["seatControlData"][key]) then
+          commonRC.actualInteriorDataStateOnHMI[pModuleType]["seatControlData"][key] = value
+         end
+      end
+    end
+  else
+    setActualInteriorVDorigin(pModuleType, pParams)
+  end
+end
+
 return m
