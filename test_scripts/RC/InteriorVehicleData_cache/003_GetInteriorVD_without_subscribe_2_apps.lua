@@ -7,7 +7,7 @@
 --
 -- Description:
 -- In case
--- 1. Mobile app1 requested GetInteriorVD(module_1, without subscribe parameter) and HMI sent GetInteriorVD to HMI
+-- 1. Mobile app1 requested GetInteriorVD(module_1, without subscribe parameter) and SDL sent GetInteriorVD to HMI
 -- 2. Mobile app2 GetInteriorVD(module_1, without subscribe parameter) request
 -- SDL must
 -- 1. send GetInteriorVD(module_1, without subscribe parameter) request to HMI
