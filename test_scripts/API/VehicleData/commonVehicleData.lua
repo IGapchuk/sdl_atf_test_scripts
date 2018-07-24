@@ -35,7 +35,7 @@ function commonVehicleData.getGetVehicleDataConfig()
     steal_focus = false,
     priority = "NONE",
     default_hmi = "NONE",
-    groups = { "Base-4", "Emergency-1" }
+    groups = { "Base-4", "Emergency-1", "VehicleInfo-3" }
   }
 end
 
