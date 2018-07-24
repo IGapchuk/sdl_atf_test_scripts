@@ -22,6 +22,21 @@ c.capMap = {
   ["HMI_SETTINGS"] = "hmiSettingsControlCapabilities"
 }
 
+c.audioSources = {
+  "NO_SOURCE_SELECTED",
+  "CD",
+  "BLUETOOTH_STEREO_BTST",
+  "USB",
+  "USB2",
+  "LINE_IN",
+  "IPOD",
+  "MOBILE_APP",
+  "AM",
+  "FM",
+  "XM",
+  "DAB"
+}
+
 c.backupHMICapabilities = commonRC.backupHMICapabilities
 c.restoreHMICapabilities = commonRC.restoreHMICapabilities
 c.DEFAULT = commonRC.DEFAULT
@@ -110,7 +125,7 @@ function c.getModuleControlData(pModuleType)
   elseif "AUDIO" == pModuleType then
     struct.moduleType = "AUDIO"
     struct.audioControlData = {
-      source = "RADIO_TUNER",
+      source = "AM",
       keepContext = false,
       volume = 50,
       equalizerSettings = {

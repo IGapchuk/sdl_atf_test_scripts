@@ -34,7 +34,10 @@ local audioSources = {
   "USB2",
   "LINE_IN",
   "IPOD",
-  "RADIO_TUNER"
+  "AM",
+  "FM",
+  "XM",
+  "DAB"
 }
 
 local keepContext = {

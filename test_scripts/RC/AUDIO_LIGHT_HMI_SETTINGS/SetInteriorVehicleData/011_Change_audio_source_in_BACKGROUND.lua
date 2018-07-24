@@ -26,17 +26,6 @@ config.application2.registerAppInterfaceParams.isMediaApplication = true
 
 --[[ Local Variables ]]
 local audioData = common.getSettableModuleControlData("AUDIO")
-local audioSources = {
-  "NO_SOURCE_SELECTED",
-  "CD",
-  "BLUETOOTH_STEREO_BTST",
-  "USB",
-  "USB2",
-  "LINE_IN",
-  "IPOD",
-  "MOBILE_APP",
-  "RADIO_TUNER"
-}
 
 --[[ Local Functions ]]
 local function setVehicleData(pSource)
@@ -67,7 +56,7 @@ runner.Step("Activate App1", common.activateApp)
 runner.Step("Set App1 to BACKGROUND HMI level", BringAppToBACKGROUND)
 
 runner.Title("Test")
-for _, source in pairs(audioSources) do
+for _, source in pairs(common.audioSources) do
   runner.Step("SetInteriorVehicleData with source " .. source, setVehicleData, { source })
 end
 
